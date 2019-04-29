@@ -2,6 +2,7 @@ import { NinePatch } from '@koreez/phaser3-ninepatch';
 import { GameObjects } from 'phaser';
 import { gameConfig } from '../../constants/GameConfig';
 import { POINTER_EVENT } from '../../constants/PhaserEvents';
+import { getScene } from '../../utils/Utils';
 import PopupScene from '../scenes/PopupScene';
 
 export const SHOW_TWEEN_DURATION: number = 500;
@@ -48,7 +49,7 @@ export default class StandardPopup extends Phaser.GameObjects.Container {
 
   constructor() {
     super(
-      (window as any).game.scene.getScene(PopupScene.NAME),
+      getScene(PopupScene.NAME),
       gameConfig.canvasWidth / 2,
       gameConfig.canvasHeight / 2,
     );
